@@ -15,5 +15,3 @@ Para rodar o projeto:
 - Dentro do arquivo, em qualquer lugar, clique com o botão direito do mouse -> Run Python -> Run Python File in Terminal
 - O console irá abrir e mostrará algo como "* Running on http://127.0.0.1:5000"
 - No console, coloque o mouse em cima do link e pressione Ctrl + Clique
-
-Como o projeto deve carregar:
