@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação Agrícola</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .campos {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">
+            <h1>Simulação Agrícola</h1>
+
+            <form method="POST" action="/predict" id="formAgricola">
+
+                <!-- Campo Cultura -->
+                <div class="campos">
+                    <label for="Cultura">Cultura:</label>
+                    <input type="text" id="Cultura" name="Cultura" placeholder="ex: Milho, Soja, Arroz" required>
+                </div>
+
+                <!-- Quantidade a ser Plantada -->
+                <div class="campos">
+                    <label for="Quantidade_a_ser_Plantada_Toneladas">Quantidade a ser Plantada (Toneladas):</label>
+                    <input type="number" id="Quantidade_a_ser_Plantada_Toneladas" name="Quantidade_a_ser_Plantada_Toneladas" required>
+                </div>
+
+                <!-- Frequência de Irrigação -->
+                <div class="campos">
+                    <label for="Frequencia_Irrigacao">Frequência de Irrigação:</label>
+                    <select id="Frequencia_Irrigacao" name="Frequencia_Irrigacao" required>
+                        <option value="Diária">Diária</option>
+                        <option value="Semanal">Semanal</option>
+                        <option value="Mensal">Mensal</option>
+                    </select>
+                </div>
+
+                <!-- Tipo de Solo -->
+                <div class="campos">
+                    <label for="Tipo_Solo">Tipo de Solo:</label>
+                    <select id="Tipo_Solo" name="Tipo_Solo" required>
+                        <option value="Argila">Argila</option>
+                        <option value="Areia">Areia</option>
+                        <option value="Silte">Silte</option>
+                    </select>
+                </div>
+
+                <!-- Tipo de Irrigação -->
+                <div class="campos">
+                    <label for="Tipo_de_Irrigacao">Tipo de Irrigação:</label>
+                    <select id="Tipo_de_Irrigacao" name="Tipo_de_Irrigacao" required>
+                        <option value="Aspersão">Aspersão</option>
+                        <option value="Sulcos">Sulcos</option>
+                        <option value="Gotejamento">Gotejamento</option>
+                    </select>
+                </div>
+
+                <!-- Fertilizante -->
+                <div class="campos">
+                    <label for="Fertilizante">Fertilizante:</label>
+                    <select id="Fertilizante" name="Fertilizante" required>
+                        <option value="Nitrogênio">Nitrogênio</option>
+                        <option value="Fósforo">Fósforo</option>
+                        <option value="Composto">Composto</option>
+                        <option value="Orgânico">Orgânico</option>
+                    </select>
+                </div>
+
+                <!-- Temperatura Média -->
+                <div class="campos">
+                    <label for="Temperatura_Media">Temperatura Média (ºC):</label>
+                    <input type="number" id="Temperatura_Media" name="Temperatura_Media" required>
+                </div>
+
+                <!-- Pragas -->
+                <div class="campos">
+                    <label for="Pragas">Pragas:</label>
+                    <input type="text" id="Pragas" name="Pragas" placeholder="ex: Ferrugem, Insetos, Fungos" required>
+                </div>
+
+                <!-- Rotação de Culturas -->
+                <div class="campos">
+                    <label for="Rotacao_de_Culturas">Rotação de Culturas:</label>
+                    <select id="Rotacao_de_Culturas" name="Rotacao_de_Culturas" required>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <!-- Uso de Pesticidas -->
+                <div class="campos">
+                    <label for="Uso_de_Pesticidas">Uso de Pesticidas:</label>
+                    <select id="Uso_de_Pesticidas" name="Uso_de_Pesticidas" required>
+                        <option value="Alto">Alto</option>
+                        <option value="Moderado">Moderado</option>
+                        <option value="Baixo">Baixo</option>
+                    </select>
+                </div>
+
+                <!-- Tecnologia Utilizada -->
+                <div class="campos">
+                    <label for="Tecnologia_Utilizada">Tecnologia Utilizada:</label>
+                    <select id="Tecnologia_Utilizada" name="Tecnologia_Utilizada" required>
+                        <option value="Alto">Alto</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Baixo">Baixo</option>
+                    </select>
+                </div>
+
+                <button type="submit">Prever</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Clima</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Previsão do Clima</h1>
+
+    <form id="cidadeForm">
+        <label for="cidade">Digite o nome da cidade:</label>
+        <input type="text" id="cidade" name="cidade" required><br>
+
+        <button type="button" id="buscarCidade">Buscar Cidades</button>
+    </form>
+
+    <div id="cidadeOptions" style="display:none;">
+        <label for="cidadeId">Selecione a cidade (ID):</label>
+        <select id="cidadeId" name="cidadeId"></select><br>
+
+        <label for="opcao">Previsão:</label>
+        <select id="opcao" name="opcao" required>
+            <option value="hoje">Previsão de Hoje</option>
+            <option value="7dias">Previsão para 7 Dias</option>
+        </select><br>
+
+        <button type="submit" id="preverClima">Ver Previsão</button>
+    </div>
+
+    <div id="resultado" style="display:none;">
+        <h2>Previsão do Clima</h2>
+        <pre id="previsaoClima"></pre>
+    </div>
+
+    <script>
+        // buscando pelo id da cidade pois é um critério do climatempo, api q usamos
+        $('#buscarCidade').click(function () {
+            const cidade = $('#cidade').val();
+
+            $.post('/buscar_cidades', { cidade: cidade }, function (data) {
+                if (data.cidades.length > 0) {
+                    $('#cidadeId').empty(); //limpando opções anteriores
+                    data.cidades.forEach(function (cidade) {
+                        $('#cidadeId').append(`<option value="${cidade.id}">${cidade.name} (${cidade.state}, ${cidade.country})</option>`);
+                    });
+                    $('#cidadeOptions').show(); 
+                } else {
+                    alert('Nenhuma cidade encontrada.');
+                }
+            }).fail(function () {
+                alert('Erro ao buscar as cidades.');
+            });
+        });
+
+        $('#preverClima').click(function () {
+            const cidadeId = $('#cidadeId').val();
+            const opcao = $('#opcao').val();
+
+            $.post('/climatempo_predict', { cidadeId: cidadeId, opcao: opcao }, function (data) {
+                if (data.previsao) {
+                    $('#resultado').show();
+                    $('#previsaoClima').text(JSON.stringify(data.previsao, null, 2));
+                } else {
+                    alert('Erro ao obter a previsão.');
+                }
+            }).fail(function () {
+                alert('Erro ao processar a previsão.');
+            });
+        });
+    </script>
+</body>
+
+</html>

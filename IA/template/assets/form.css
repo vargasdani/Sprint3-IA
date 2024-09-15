@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    background-color: #efefef;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2b8e41;
+}
+
+.gerarCultura {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 150px;
+}
+
+.gerarCultura:hover {
+    background-color: #0056b3;
+}
+
+#container {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+}
+
+.box {
+    background-color: white;
+    width: 45%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 5%;
+    color: #166397;
+}
+
+form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 160px;
+    height: 35px;
+    border: 1px solid lightgrey;
+    background: #f9f9f9;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.btn {
+    justify-content: center;
+    padding: 20px;
+}
+
+.btnEnviar {
+    background-color: #166397;
+    border: 1px solid #0b6895;
+    border-radius: 6px;
+    width: 140px;
+    height: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+.btnEnviar:hover {
+    background-color: #0b6895;
+}
+
+#resultado {
+    background-color: white;
+    width: 50%;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 3%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 2s;
+}
+
+#resultado p {
+    margin: 1% 0;
+    font-size: 14px;
+}
+
+#resultado h2 {
+    margin: 1% 0;
+    font-size: 20px;
+}
+
+#resultado a {
+    color: #09f;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.divGerar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invisivel {
+    display: none;
+}
+
+/* Regras de mídia para dispositivos móveis */
+@media screen and (max-width: 767px) {
+
+    .box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .campos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input, select {
+        width: 100%;
+    }
+
+    .btn {
+        margin-bottom: 5%;
+    }
+
+    #resultado {
+        width: 90%;
+    }
+
+    .gerarCultura {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        width: auto;
+    }
+    
+    .gerarCultura:hover {
+        background-color: #24b6b8;
+    }
+}

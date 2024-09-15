@@ -1,0 +1,21 @@
+
+{
+    "Milho": {
+        "tipo_de_solo": "Argila",
+        "irrigacao": "Gotejamento",
+        "frequencia": "Diária",
+        "temperatura": 25,
+        "fertilizante": "Nitrogênio",
+        "pragas": "Nenhuma",
+        "tecnologia": "Alto"
+    },
+    "Soja": {
+        "tipo_de_solo": "Areia",
+        "irrigacao": "Aspersão",
+        "frequencia": "Semanal",
+        "temperatura": 28,
+        "fertilizante": "Fósforo",
+        "pragas": "Insetos",
+        "tecnologia": "Médio"
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua Simulação</title>
+
+    <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="Logo" style="width: 150px; height: auto;">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .option {
+            margin: 20px;
+            padding: 20px;
+            background-color: #28a745; /* Cor verde */
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            width: 300px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+        .option:hover {
+            background-color: #218838; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha o que você deseja fazer:</h1>
+    
+    <!-- Opções de Navegação -->
+    <div class="option" onclick="window.location.href='/previsao_safra'">
+        Prever Produção Agrícola
+    </div>
+    <div class="option" onclick="window.location.href='/previsao_clima'">
+        Prever Clima
+    </div>
+    <div class="option" onclick="window.location.href='/chat_gemini'">
+        Chatbot (Gemini)
+    </div>
+
+</body>
+</html>

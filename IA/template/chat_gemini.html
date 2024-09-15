@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Gemini</title>
+    <style>
+        .invisivel {
+            display: none;
+        }
+        .visivel {
+            display: block;
+        }
+        #chat_response {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chatbot Gemini</h1>
+    <form method="POST" action="/chatbot_gemini" id="formChatbot">
+        <label for="message">Digite sua pergunta:</label><br>
+        <input type="text" id="message" name="message" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="chat_response" class="invisivel">
+        <h2>Resposta do Chatbot:</h2>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('formChatbot');
+            const responseDiv = document.getElementById("chat_response");
+            const responseElement = document.getElementById("response");
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();  // Impede o envio padrão do formulário
+
+                // Enviar a requisição para o chatbot via fetch
+                fetch('/chatbot_gemini', {
+                    method: 'POST',
+                    body: new FormData(form),
+                })
+                .then(response => response.json())  // Transformando a resposta em JSON
+                .then(data => {
+                    if (data.response) {
+                        // Exibindo a resposta do chatbot
+                        responseDiv.classList.remove('invisivel');
+                        responseDiv.classList.add('visivel');
+                        responseElement.textContent = data.response;
+                    } else if (data.error) {
+                        responseDiv.classList.remove('invisivel');
+                        responseDiv.classList.add('visivel');
+                        responseElement.textContent = `Erro: ${data.error}`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao conversar com o chatbot:', error);
+                    responseDiv.classList.remove('invisivel');
+                    responseElement.textContent = 'Erro ao conectar ao chatbot.';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
