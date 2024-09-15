@@ -31,11 +31,17 @@ atual e para os próximos 7 dias, visando diminuir que desastres climaticos atin
 disponibilizado para que o produtor rural possa tirar suas dúvidas relacionadas ao ramo agricola também.
 
 Juntaremos todas essas funcionalidades e disponibilizaremos para nosso usuário final através de um aplicativo com a interface intuitiva e amigavel.
+
 Próximos passo:
+
 -Juntas todas as integrações;
+
 -Transformar o resultado de um json para um formato tabular colorido;
+
 -Aumentar o dataset com dados fidedígnos;
+
 -Juntar com o Dianóstico por imagem 
+
 
 Requirements:
 - Flask (pip install flask)
