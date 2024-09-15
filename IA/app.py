@@ -8,7 +8,9 @@ import google.generativeai as genai
 
 
 #aqui, nós apenas carregamos o modelo conforme treinado no notebook Tech_Splinter.ipynb
-modelo = pickle.load(open(r'C:\Users\daani\Downloads\final_project_fixed_form\IA\models\random_forest_regressor_model.sav', 'rb'))
+modelo = pickle.load(open(r'IA\models\random_forest_regressor_model.sav', 'rb'))
+
+
 
 
 #definimos as colunas
