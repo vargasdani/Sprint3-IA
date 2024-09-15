@@ -32,6 +32,6 @@ Ou, se preferir, para 7 dias:
 Voce também poderá testar nossa integração com a API do Gemini, faça a pergunta (de preferencia relacionada a agricultura) que desejar por lá! 
 ![image](https://github.com/user-attachments/assets/bb210550-256e-4b49-9563-1ecf27a2b80e)
 
-Por fim, voce pode testar a nossa IA, basta preencher alguns campos que vão ser levaos em consideração para dizermos qual a previsão de produção que voce/sua fazenda terá por hectares! 
+Por fim, voce pode testar a nossa IA, basta preencher alguns campos que vão ser levados em consideração para dizermos qual a previsão de produção que voce/sua fazenda terá por hectares! 
 ![image](https://github.com/user-attachments/assets/9521d808-e1df-4932-a69d-6b94d72b0caa)
 
