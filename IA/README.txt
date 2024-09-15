@@ -2,8 +2,10 @@ Requirements:
 - Flask (pip install flask)
 - Pandas (pip install pandas)
 - Numpy (pip install numpy)
+- Requests(pip install requests)
 - Sklearn (pip install scikit-learn==1.2.2)
--Google.generativeai (pip install google.generativeai)
+- Google.generativeai (pip install google.generativeai)
+- Pickle (pip install pickle)
 Para instalar essas bibliotecas no seu computador:
 1. Abra o terminal (cmd)
 2. Digite o código ao lado de cada biblioteca e pressione Enter
