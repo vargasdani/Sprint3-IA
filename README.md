@@ -27,7 +27,7 @@ plantio e melhorando a previsibilidade de resultados (vendas, lucro, fluxo de ca
 agricultores de pequena escala a grandes produtores agrícolas.
 
 Nosso projeto pivotou e nossos objetivos aumentaram, além de analisar dados históricos (que seriam de produção), será possível também um serviço de consulta ao clima
-atual e para os próximos 7 dias, visando diminuir que desastres climaticos atingam as plantações e com a nossa integração com a API do Gemini, teremos uma espécie de Chatbot
+atual e para os próximos 7 dias, visando diminuir que desastres climaticos atinjam as plantações e com a nossa integração com a API do Gemini, teremos uma espécie de Chatbot
 disponibilizado para que o produtor rural possa tirar suas dúvidas relacionadas ao ramo agricola também.
 
 Juntaremos todas essas funcionalidades e disponibilizaremos para nosso usuário final através de um aplicativo com a interface intuitiva e amigavel.
