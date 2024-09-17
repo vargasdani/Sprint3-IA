@@ -80,3 +80,7 @@ Voce também poderá testar nossa integração com a API do Gemini, faça a perg
 Por fim, voce pode testar a nossa IA, basta preencher alguns campos que vão ser levados em consideração para dizermos qual a previsão de produção que voce/sua fazenda terá por hectares! 
 ![image](https://github.com/user-attachments/assets/9521d808-e1df-4932-a69d-6b94d72b0caa)
 
+
+
+LINK DO VÍDEO PARTE 1: https://youtu.be/k6HN1aBthTs
+PS: a parte 2 está com a marcela e está disponível no repositorio https://github.com/ella-at/Sprint_IA
